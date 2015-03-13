@@ -1,0 +1,28 @@
+<h2><%= SIGNUP_FORM_TITLE %></h2>
+<div id="notice">
+	<%= render partial: 'shared/messages', flash: flash %>
+</div><!-- ./notice -->
+
+<div id="cd-signup">
+	<%= form_tag({:controller => "home", :action => "interested"}, :method => "post", :remote => true, :class => "cd-form") do %>
+		<%= hidden_field_tag :ref, "#{@ref}" %>
+		
+		<p class="fieldset">
+			<%= SIGNUP_FORM_TEXT %>
+		</p>
+
+		<p class="fieldset">
+			<label class="image-replace cd-username" for="signup-username">First Name</label>
+			<%= text_field_tag 'name', nil, placeholder: 'First Name', :class => 'full-width has-padding has-border', id: 'signup-username' %>
+		</p><!-- ./name -->
+
+		<p class="fieldset">
+			<label class="image-replace cd-email" for="signup-email">Email</label>
+			<%= text_field_tag 'email', nil, placeholder: 'Email', :class => 'full-width has-padding has-border', id: 'signup-email', required: true %>
+		</p><!-- ./email -->
+
+		<p class="fieldset">
+			<%= submit_tag "Request invitation", class: 'full-width has-padding btn-auth-red', id: 'request_invite' %>
+		</p><!-- ./submit-button -->
+	<% end %>
+</div> <!-- ./cd-signup -->

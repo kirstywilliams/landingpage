@@ -1,0 +1,68 @@
+	<title><%= COMPANY_NAME %> | <%= COMPANY_SLOGAN %></title>
+	
+	<!-- Meta -->
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="<%= SITE_KEYWORDS %>"/>
+  <meta name="description" content="<%= COMPANY_DESCRIPTION %>"/>
+
+  <!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+	<!-- Assets -->
+	<%= stylesheet_link_tag 'application', media: 'all' %>
+	<%= javascript_include_tag 'application' %>
+	
+	<!-- Open Graph -->
+	<link href="https://plus.google.com/<%= GOOGLE_PLUS_NAME %>/posts" rel="publisher">
+	
+	<!-- Application-specific meta tags -->
+	<!-- Windows 8: see http://msdn.microsoft.com/en-us/library/ie/dn255024%28v=vs.85%29.aspx for details -->
+  <meta name="application-name" content="<%= COMPANY_NAME %>" /> 
+  <meta name="msapplication-TileColor" content="<%= BRAND_COLOR %>" /> 
+	<meta name="msapplication-TileImage" content="" />
+	<meta name="msapplication-square150x150logo" content="" />
+	<meta name="msapplication-square310x310logo" content="" />
+	<meta name="msapplication-square70x70logo" content="" />
+	<meta name="msapplication-wide310x150logo" content="" />
+  
+  <!-- Twitter: see https://dev.twitter.com/docs/cards/types/summary-card for details -->
+  <meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@<%= TWITTER_NAME %>" />
+	<meta name="twitter:title" content="<%= COMPANY_NAME %>" />
+	<meta name="twitter:description" content="<%= COMPANY_DESCRIPTION %>" />
+	<meta name="twitter:image" content="" />
+	
+	<!-- Facebook (and some others) use the Open Graph protocol: see http://ogp.me/ for details -->
+	<meta property="og:title" content="<%= COMPANY_NAME %>" />
+	<meta property="og:type" content="company" />
+	<meta property="og:site_name" content="<%= COMPANY_NAME %>" />
+	<meta property="og:description" content="<%= COMPANY_DESCRIPTION %>" />
+	<meta property="og:url" content="http://<%= SITE_DOMAIN %>" />
+	<meta property="og:image" content="" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta property="og:image:width" content="480" />
+	<meta property="og:image:height" content="270" />
+	
+	<html itemscope itemtype="http://schema.org/Organization">
+	<meta itemprop="name" content="<%= COMPANY_NAME %>" />
+	<meta itemprop="description" content="<%= COMPANY_DESCRIPTION %>" />
+	<meta itemprop="image" content="" />
+	<meta name="bitly-verification" content="<%= BITLY_TRACKING_CODE %>"/>
+	
+	<%= favicon_link_tag 'favicon.ico' %>
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', "<%= SITE_GOOGLE_ANALYTICS %>", "<%= SITE_DOMAIN %>");
+	  ga('require', 'displayfeatures');
+	  ga('send', 'pageview');
+
+	</script>
+		
+  <%= csrf_meta_tags %>

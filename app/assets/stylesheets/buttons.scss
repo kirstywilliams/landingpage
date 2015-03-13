@@ -1,0 +1,37 @@
+//
+// Buttons
+// --------------------------------------------------
+
+// Button
+// -------------------------
+
+.btn {
+	text-shadow: none;
+	@include reset-box-shadow();
+	&.active, &:active {
+		outline: 0;
+		background-color: #FFF; 
+	}
+	&:hover {
+		&.text-primary { 
+			background-color: $primary-color; 
+			.fa { color:#FFF; }
+		}
+	}
+	&.btn-sm { font-size: 13px;}
+}
+
+.btn-block { width: 100%; min-height:30px; }
+.btn-group { 
+	.btn + .btn:not(.btn-block) { margin-left: -1px; } 
+}
+
+.btn-signup{
+	background-color: $primary-color;
+	color: #FFF;
+}
+
+.btn-signup:hover{
+	background-color: $primary-color;
+	color: #FFF;
+}

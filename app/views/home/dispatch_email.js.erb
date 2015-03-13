@@ -1,0 +1,2 @@
+$("#contact_flash").html("<%= escape_javascript(render :partial => 'layouts/messages' , :flash => flash).html_safe %>");
+$("#contact_form").find("input[type=text], textarea").val("");

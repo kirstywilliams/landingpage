@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Landingpage</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<%= render partial: 'shared/head' %>
 </head>
-<body>
+<body class="static" id="site_home">
+	<%= render partial: "static_mainbar" %>
+	<%= render partial: "shared/signup_modal" %>
+	
+	<div id="fullpage">
 
-<%= yield %>
+		<%= render partial: "home/sections/section0" %>
+		
+		<%= render partial: "home/sections/section1" %>
 
+		<%= render partial: "home/sections/section2" %>
+
+		<%= render partial: "home/sections/section3" %>
+		
+		<%= render partial: "home/sections/section4" %>
+		
+	</div><!-- ./fullpage -->
+
+<%= javascript_include_tag "fullpage_custom" %>
+<%= javascript_include_tag "signup_modal" %>
+	
+<script type="text/javascript">
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#flash').remove();
+  }, 5000);
+ })
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#contact_flash').remove();
+  }, 3000);
+ })
+</script>
 </body>
 </html>

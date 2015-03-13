@@ -1,0 +1,85 @@
+#####################################################################
+### Below are the configuration settings for the landing page.
+### Please ensure valid values are given for all keys. For steps 
+### on obtaining keys for third party services
+### please direct your attention to the README file.
+#####################################################################
+
+## THIRD PARTY SERVICES
+
+# Mailchimp
+MAILCHIMP_API_KEY = ''
+MAILCHIMP_LIST_ID = ''
+
+# Mandrill App
+MANDRILL_APIKEY = ''
+MANDRILL_USERNAME = ''
+
+# Bitly
+BITLY_TRACKING_CODE = ''
+
+# Google Analytics
+SITE_GOOGLE_ANALYTICS = ''
+
+# Social handles
+TWITTER_NAME = 'digitisedlipstk'
+TWITTER_HASHTAG = 'CommaSeparatedValues,A,B,C'
+FACEBOOK_NAME = 'kirstypageone'
+GOOGLE_PLUS_NAME = 'kirstywilliams2013'
+
+# Social share text e.g. shown in tweet
+SOCIAL_SHARE_TEXT = "I've just requested an invite for the brilliant COMPANY_NAME"
+
+
+## LANDING PAGE CONTENT
+
+# This site's domain name, including the 'www.' but not 'http://':
+SITE_DOMAIN = 'www.example.com'
+
+# Company Name (displayed throughout site)
+COMPANY_NAME = 'Your Company Name'
+
+# Slogan for the site, also used in Tweet so keep it short:
+COMPANY_SLOGAN = 'Company Slogan'
+
+COMPANY_DESCRIPTION = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse metus ligula, elementum accumsan volutpat a, eleifend id purus. Nullam enim."
+
+# Keywords for the site:
+SITE_KEYWORDS = 'startup, content curation, beta launch, social media, we development'
+
+# Your primary brand color
+BRAND_COLOR = "#3C687C"
+
+# Email address for contact form messages
+CONTACT_EMAIL = 'jane@example.com'
+
+# Interested page title - shown following signup
+INTERESTED_HEADING = 'INTERESTED HEADING'
+INTERESTED_TEXT = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae lacus gravida, sagittis odio vitae, ullamcorper felis. Nam venenatis arcu ut neque venenatis, nec tincidunt ex euismod. Maecenas pretium sapien dui, et volutpat libero faucibus eget. Suspendisse a iaculis dolor."
+
+SHARE_TEXT = 'Share your personalised link or use the buttons below:'
+
+SIGNUP_BUTTON_TEXT = 'Request Invite' #Also used in tests
+SIGNUP_FORM_TITLE = "Register your interest"
+SIGNUP_FORM_TEXT = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae lacus gravida, sagittis odio vitae, ullamcorper felis. Nam venenatis arcu ut neque venenatis, nec tincidunt ex euismod. Maecenas pretium sapien dui, et volutpat libero faucibus eget. Suspendisse a iaculis dolor."
+SIGNUP_FORM_SUBMIT_BUTTON_TEXT = "Request an invite"
+
+SLOGAN_PRIMARY = "Launching Soon"
+SLOGAN_SECONDARY = "The Best Thing Since Sliced Bread"
+SLOGAN_OTHER = "You Know You Want To!"
+
+SECTION_ONE_TITLE = "Section ONE"
+SECTION_TWO_TITLE = "Section TWO"
+SECTION_THREE_TITLE = "Section THREE"
+SECTION_FOUR_TITLE = "Section FOUR"
+SECTION_ONE_TEXT = "Lorem ipsum dolor sit amet, consectetur adipiscing <span>elit</span>. Integer vitae lacus gravida, sagittis odio <span>vitae</span>, ullamcorper felis. Nam venenatis arcu ut neque venenatis, nec tincidunt ex <span>euismod</span>. Maecenas pretium sapien dui, et volutpat libero faucibus eget. Suspendisse a iaculis dolor."
+SECTION_TWO_TEXT = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae lacus gravida, sagittis odio vitae, ullamcorper felis. Nam venenatis arcu ut neque venenatis, nec tincidunt ex euismod. Maecenas pretium sapien dui, et volutpat libero faucibus eget. Suspendisse a iaculis dolor."
+SECTION_THREE_TEXT = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae lacus gravida, sagittis odio vitae, ullamcorper felis. Nam venenatis arcu ut neque venenatis, nec tincidunt ex euismod. Maecenas pretium sapien dui, et volutpat libero faucibus eget. Suspendisse a iaculis dolor."
+SECTION_FOUR_TEXT = ""
+SECTION0_BG = "background13.jpg"
+SECTION1_BG = "background14.jpg"
+SECTION2_BG = "background18.jpg"
+SECTION3_BG = "background12.jpg"
+SECTION4_BG = "background22.jpg"
+
+COPYRIGHT_BUTTONS = "&copy; 2015 COMPANY_NAME | <a href='#'>Privacy Policy</a> | <a href='#''>Contact</a>"

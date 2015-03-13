@@ -1,0 +1,548 @@
+// HOME PAGE
+.container-fluid{
+	padding: 0 !important;
+}
+
+body#site_home{
+	line-height: 1.4;
+	background-color: #FFF;
+	text-align: center;
+
+	.row{
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+	
+	.navbar{
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		z-index: 3;
+		
+		background: none;
+	
+		.navbar-button{
+			margin-top:20px;
+			font-family: $body-font-2;
+			.btn-sm{
+				@include rounded(10em);
+			}
+		}
+		
+		//for light backgrounds
+		.navbar-logo{
+			margin-top:10px;
+			font-family: $body-font-3;
+			h1{
+				font-size: 34px;
+				color: $body-text;
+				z-index:500;
+			}
+		}
+		
+		// for dark backgrounds
+		.navbar-logo-light{
+			margin-top:10px;
+			font-family: $body-font-3;
+			h1{
+				font-size: 34px;
+				color: #FFF;
+				z-index:500;
+			}
+		}
+	}
+	
+	.container-fluid{
+		background: none;
+	}
+
+	#footer{
+		background: none;
+		color: #FFF;
+		a{
+			color: #FFF;
+		}
+	}
+	
+	h1, h2{
+		line-height: 1.2em;
+		color: #FFF;
+	}
+	
+	/* Common styles
+	* --------------------------------------- */
+	img{
+	    @include transition(all 0.7s ease-out);
+	}
+	.section{
+		text-align:center;
+		overflow:hidden;
+		padding:0 50px;
+	}
+	.wrap{
+		width: 100%;
+		height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
+	.box{
+		text-align: left;
+		color: #808080;
+	}
+	
+	#fullPage-nav span, .fullPage-slidesNav span{
+		width: 12px;
+		height: 12px;
+	}
+
+	#fullPage-nav span, .fullPage-slidesNav span{
+		border-color: $primary-color;
+	}
+	#fullPage-nav li .active span, .fullPage-slidesNav .active span{
+		background: $primary-color;
+	}
+
+	/* Overrequest-invite fullPage.js tooltip color
+	* --------------------------------------- */
+	.fullPage-tooltip{
+		background-color: rgba(0,0,0, 0.6);
+		color: #FFF !important;
+		//width:75px;
+		text-align:center;
+		padding:7px 25px;
+		@include border-radius(4px);
+	}
+	
+	.section-background-overlay{
+	    @include overlay-background($body-text, 0.95);
+	}
+	
+	/* Section 0
+	* --------------------------------------- */
+	#section0{
+		background-color: #FFF;
+		h1, h2{
+			z-index: 500;
+			color:$body-text;
+		}
+		.btn-request-invite{
+			color: #FFF;
+			text-align: center;
+			border-radius: 10em;
+			padding: 15px 75px;
+			font-size: 24px;
+		
+			&:hover{
+				color: $body-text;
+			}
+		}
+	
+		.brand-center {
+			z-index: 500;
+		    margin:0 auto;
+		    float:none;
+			width:125px;
+			height:125px;
+			position:relative;
+
+			#brand-wrapper{
+				width:100%;
+				height:100%;
+				img{
+					border:none;
+					width:100%;
+				}
+			}
+		}
+		
+		#section0-background {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    bottom: 0;
+		    right: 0;
+
+			@include cover-background("backgrounds/<%= SECTION0_BG %>");
+			//@include blur(3px);
+			@include transition(.5s);
+		}
+	}
+	
+	/* Section 1
+	* --------------------------------------- */
+	#section1{
+		position:relative;
+		h1,h2, p{
+			z-index:500 !important;
+			position: relative !important;
+		}
+
+		background: #FFF;
+		#section1-background {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    bottom: 0;
+		    right: 0;
+
+			@include cover-background("backgrounds/<%= SECTION1_BG %>");
+			@include transition(.5s);
+		}
+		
+		p{
+			color:$body-text;
+			span{
+				color:$primary-color;
+			}
+		}
+
+		h1{
+			color:$body-text;
+		}
+	}
+	
+	/* Section 2
+	* --------------------------------------- */
+	#section2{
+		position:relative;
+		h1,h2, p{
+			z-index:500 !important;
+			position: relative !important;
+		}
+
+		background: #FFF;
+		#section2-background {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    bottom: 0;
+		    right: 0;
+
+			@include cover-background("backgrounds/<%= SECTION2_BG %>");
+			@include transition(.5s);
+		}
+		
+		p{
+			color:$body-text;
+			span{
+				color:$primary-color;
+			}
+		}
+
+		h1{
+			color:$body-text;
+		}
+
+		div.brand-item{
+			position:relative;
+			width:33% !important;
+			float:left;
+			display:inline;
+			margin-right: 0.5%;
+
+			img{
+				margin-bottom:20px;
+			}
+
+			&:last-child{
+				margin-right: 0px;
+			}
+		}
+	}
+	
+	/* Section 3
+	* --------------------------------------- */
+	#section3{
+		background: #FFF;
+		h1, h2{color:$body-text;}
+
+		position:relative;
+		h1,h2, p{
+			z-index:500 !important;
+			position: relative !important;
+		}
+
+		#section3-background {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    bottom: 0;
+		    right: 0;
+
+			@include cover-background("backgrounds/<%= SECTION3_BG %>");
+			@include transition(.5s);
+		}
+		
+		p{
+			color:$body-text;
+			span{
+				color:$primary-color;
+			}
+		}
+
+		#mockup1{
+			position:relative;
+			left:0px;
+			bottom:10px;
+			text-align: left;
+			img{
+				width: 50%;
+			}
+		}
+	}
+	
+	/* Section 4
+	* --------------------------------------- */
+	#section4{
+		
+		background: #FFF;
+		h1, h2{color:$body-text;}
+
+		position:relative;
+		h1,h2, p{
+			z-index:500 !important;
+			position: relative !important;
+		}
+
+		#section4-background {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    bottom: 0;
+		    right: 0;
+
+			@include cover-background("backgrounds/<%= SECTION4_BG %>");
+			@include transition(.5s);
+		}
+		
+		p{
+			color:$body-text;
+			span{
+				color:$primary-color;
+			}
+		}
+
+		.btn-request-invite{
+			color: #FFF;
+			text-align: center;
+			border-radius: 10em;
+			padding: 15px 75px;
+			font-size: 24px;
+		
+			&:hover{
+				color: $body-text;
+			}
+		}
+
+		.brand-center {
+			z-index: 500;
+		    margin:0 auto;
+		    float:none;
+			width:125px;
+			height:125px;
+			position:relative;
+
+			#brand-wrapper{
+				width:100%;
+				height:100%;
+				img{
+					border:none;
+					width:100%;
+				}
+			}
+		}
+		
+		.inline-buttons{
+			position:relative;
+			z-index:500;
+			a{
+				font-size: 24px;
+				color: #FFF;
+				border-radius: 10em;
+				padding: 10px 0;
+				width:180px;
+			}
+			.btn-request-invite{
+				margin-left:15px;
+		
+				&:hover{
+					color: $body-text;
+				}
+			}
+			
+			.btn-request-invite-inverse{
+				color:$body-text;
+				margin-right:15px;
+				background:none;
+				border: 3px solid $primary-color;
+		
+				&:hover{
+					color: $primary-color;
+				}
+			}
+		}
+
+		#copyright-line{
+			position: absolute;
+			width:100%;
+			text-align: center;
+			bottom: 30px;
+			height:80px;
+			left:0px;
+			color: $body-text;
+			p{font-size: 12px;}
+
+			a{
+				color: $body-text !important;
+			}
+
+			.nav_social{
+				line-height: 50px;
+				width:32px;
+				height:32px;
+				font-size: 24px;
+			}
+
+			a.nav_twitter:hover{
+				color:#53aee8 !important;
+			}
+			a.nav_fb:hover{
+				color:#45619d !important;
+			}
+			a.nav_gplus:hover{
+				color:#df5138 !important;
+			}
+		}
+	}
+	
+}
+
+@media (max-width: 767px){
+	#section0{
+		#section0-background{
+			//@include blur(3px);
+		}
+	}
+
+	#section1{
+		#section1-background{
+			//@include blur(3px);
+		}
+	}
+
+	#section2{
+		#section2-background{
+			//@include blur(3px);
+		}
+	}
+}
+@media (max-width: 500px){
+
+	#content{
+		margin-top: 0;
+	}
+
+	body#site_home{
+
+		p{font-size: 13px;}
+
+		.navbar{
+			.navbar-button{
+				margin-top:10px !important;
+				a{
+					margin-right: 0px !important;
+				}
+			}
+
+			.navbar-logo, .navbar-logo-light{
+				h1{
+					font-size: 28px !important;
+					padding-top:10px !important;
+				}
+			}
+			.cd-signin{
+				margin-right: 0px;
+			}
+		}
+
+		#fullPage-nav{
+			display:none;
+		}
+		.section{padding:0 40px !important;}
+		#section0{
+
+			.brand-center {
+				width:105px !important;
+				height:105px !important;
+			}
+
+			.btn-request-invite{
+				display:block;
+				max-width:100% !important;
+				width:100%;
+				padding: 5px !important;
+			}
+		}
+
+		#section2{
+			div.brand-item{
+
+				img{
+					margin-bottom:5px;
+				}
+
+				h3{
+					font-size:16px;
+				}
+			}
+		}
+
+		#section3{
+			#mockup1{
+				img{
+					width: 100%;
+				}
+			}
+		}
+		
+
+		#section4{
+			.brand-center {
+				width:105px !important;
+				height:105px !important;
+			}
+
+			.btn-request-invite{
+				display:block;
+				max-width:100% !important;
+				width:100%;
+				padding: 5px !important;
+			}
+			
+			.inline-buttons{
+				a{
+					font-size: 16px !important;
+					padding: 5px 0;
+					display:inline-block;
+					width:45% !important;
+				}
+
+				.btn-request-invite{
+					margin-left:5px !important;
+				}
+				
+				.btn-request-invite-inverse{
+					margin-right:5px !important;
+				}
+			}
+
+			#copyright-line{
+				bottom: 10px;
+				height:60px;
+				left:0px;
+			}
+		}
+	}
+}

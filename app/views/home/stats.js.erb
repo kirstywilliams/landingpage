@@ -1,0 +1,2 @@
+$(".cd-user-modal-container").html("<%= escape_javascript( render(:partial => 'stats') ) %>");
+$("#notice").html("<%= escape_javascript(render :partial => 'shared/messages' , :flash => flash).html_safe %>");

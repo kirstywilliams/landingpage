@@ -1,0 +1,34 @@
+.navbar.main {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0;
+}
+
+.navbar {
+	ul { list-style: none; padding: 0; }
+	ul.main {
+		height: $navbar-main-line-height;
+		img { border:none; }
+	}
+	
+	.navbar-button{
+		margin-top:20px !important;
+		.btn-sm{
+			-webkit-border-radius: 10em !important;
+			-moz-border-radius: 10em !important;
+			border-radius: 10em !important;
+		}
+	}
+	
+	@include rounded();
+	border: none;
+	background: rgba(#FFF, 0.97);
+
+	&.main {
+		margin: 0;
+		z-index: 1001;
+		padding: 10px 20px 0 15px;
+	}
+}

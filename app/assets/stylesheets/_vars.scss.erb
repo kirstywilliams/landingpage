@@ -3,10 +3,16 @@
 // --------------------------------------------------
 
 // Layout
+$navbar-main-height: 74px;
+$navbar-main-line-height: 70px;
+$layout-app-separator: 24px;
+$spacing: 14px;
 
-// Colors
+// Primary Colors
 $light-gray: #F9F9F9;
 $black: #000;
+$primary-color: <%= BRAND_COLOR %>;
+$inverse-color: #424242;
 
 // Transparency
 $rgba-gray-50: rgba(66, 66, 66, 0.5);
@@ -35,12 +41,21 @@ $rgba-white-90: rgba(255, 255, 255, 0.9);
 $rgba-white-95: rgba(244, 244, 244, 0.95);
 
 // Link colors
+$link-color: $primary-color;
+$link-hover: #050907;
 
 // Body background (Affects main content background only)
 $body-bg: $light-gray;
 
 // Content
-$bodyText: $black;
+$body-text: #000;
+$body-text-shadow: 0 1px 0 #FFF;
+$content-border: #E2E1E1;
+$content-border2: #EAEAEA;
+$content-gradient1: #fdfdfd;
+$content-gradient2: #F4F4F4;
+$content-bg1: #fafafa;
+$container-bg: darken(#EFEFEF, 2%);
 
 // Screen widths - Same as bootstrap default settings
 $screen-xs: 480px;

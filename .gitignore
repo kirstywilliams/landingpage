@@ -36,3 +36,8 @@ Gemfile.lock
 # Bundler binstubs
 /bin/
 /.bundle
+
+config/initializers/bitly.rb
+config/initializers/landingpage.rb
+
+ images/*

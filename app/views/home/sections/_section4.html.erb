@@ -1,0 +1,54 @@
+
+<!-- ########### BOTTOM SECTION ######### -->
+
+<div class="section moveDown" id="section4">
+	<div id="section4-background"></div>
+	<div class="separator-h"></div>
+	<div class="separator-h"></div>
+	<div class="separator-h"></div>
+	<div class="separator-h"></div>
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 text-center">
+			<div class="brand-center">
+				<div id="brand-wrapper">
+					<%= image_tag("logo.png", alt: "#{ COMPANY_NAME }") %>
+				</div><!-- ./brand-wrapper -->
+			</div><!-- ./brand-center -->
+		</div><!-- ./col -->
+		<div class="clearfix"></div>
+	</div><!-- ./row -->
+
+	<div class="row">
+		<div id="uber-statement" class="col-md-12 text-center">
+	
+			<div class="separator-h"></div>
+	
+			<h1><%= SLOGAN_OTHER %></h1>
+	
+			<div class="separator-h hidden-xs"></div>
+			<div class="separator-h"></div>
+			<div class="separator-h"></div>
+			
+			<a href="javascript:void(0);" class="btn btn-sm btn-navbar btn-signup btn-request-invite cd-signup"><%= SIGNUP_BUTTON_TEXT%></a>
+		</div><!-- ./col -->
+		<div class="clearfix"></div>
+	</div><!-- ./row -->
+	
+	<div class="separator-h"></div>
+	<div class="separator-h"></div>
+	<div class="separator-h"></div>
+	<div class="separator-h hidden-xs"></div>
+
+	<div class="row" id="copyright-line">
+		<div class="col-md-12 text-center">
+			<p><%= (COPYRIGHT_BUTTONS).html_safe %></p>
+			
+			<a href="http://www.twitter.com/<%= TWITTER_NAME %>" class="fa fa-twitter nav_social nav_twitter"></a>
+			<a href="http://www.facebook.com/<%= FACEBOOK_NAME %>" class="fa fa-facebook nav_social nav_fb"></a>
+			<a href="https://plus.google.com/<%= GOOGLE_PLUS_NAME %>" class="fa fa-google-plus nav_social nav_gplus"></a>
+				
+		</div><!-- ./col -->
+		<div class="clearfix"></div>
+	</div><!-- ./row/copyright-line -->
+</div><!-- ./section4 -->
