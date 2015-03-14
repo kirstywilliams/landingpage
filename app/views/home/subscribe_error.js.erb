@@ -1,1 +1,2 @@
-$("#notice").html("<%= escape_javascript(render :partial => 'shared/messages' , :flash => flash).html_safe %>");
+//$("#notice").html("<%= escape_javascript(render :partial => 'shared/messages' , :flash => flash).html_safe %>");
+$("#notice").html("<%= escape_javascript(multiple_messages(flash)).html_safe %>");

@@ -29,6 +29,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'letter_opener'
   gem 'browser_details'
+  gem "rails_best_practices"
   gem 'metric_fu'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

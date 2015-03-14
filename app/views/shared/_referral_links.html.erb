@@ -1,6 +1,6 @@
 <p class="fieldset">
   <label class="image-replace cd-link" for="referral-link"></label>
-  <input type="text" onClick="select()" value="<%= shorten_with_bitly(@referral_code) %>" class="full-width has-padding has-border" id="referral-link">
+  <input type="text" onClick="select()" value="<%= shorten_with_bitly(@rcode) %>" class="full-width has-padding has-border" id="referral-link">
 </p><!-- ./referral-link -->
 
 <p class="fieldset">
@@ -8,13 +8,13 @@
 </p><!-- ./copy-referral-link -->
 
 <div class="12u" id="social-share-referral">
-  <a href="https://twitter.com/intent/tweet?<%= normalise_ext("url=http://#{SITE_DOMAIN}/?ref=#{@referral_code}&text=#{SOCIAL_SHARE_TEXT}&via=#{TWITTER_NAME}&hashtags=#{TWITTER_HASHTAG}") %>" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+  <a href="https://twitter.com/intent/tweet?<%= normalise_ext("url=http://#{SITE_DOMAIN}/?ref=#{@rcode}&text=#{SOCIAL_SHARE_TEXT}&via=#{TWITTER_NAME}&hashtags=#{TWITTER_HASHTAG}") %>" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
   
-  <a href="https://www.facebook.com/sharer/sharer.php?u=<%= "#{SITE_DOMAIN}/?ref=#{@referral_code}" %>" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=<%= "#{SITE_DOMAIN}/?ref=#{@rcode}" %>" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
   
-  <a href="https://plus.google.com/share?url=<%= normalise_ext("#{SITE_DOMAIN}/?ref=#{@referral_code}") %>" title="Share on Google+" target="_blank" class="btn btn-googleplus"><i class="fa fa-google-plus"></i> Google+</a>
+  <a href="https://plus.google.com/share?url=<%= normalise_ext("#{SITE_DOMAIN}/?ref=#{@rcode}") %>" title="Share on Google+" target="_blank" class="btn btn-googleplus"><i class="fa fa-google-plus"></i> Google+</a>
 
-  <a href="http://www.linkedin.com/shareArticle?mini=true&url=<%= normalise_ext("#{SITE_DOMAIN}/?ref=#{@referral_code}") %>&title=<%= normalise_ext("#{COMPANY_NAME}") %>&summary=<%= normalise_ext("#{SOCIAL_SHARE_TEXT}") %>" title="Share on LinkedIn" target="_blank" class="btn btn-linkedin"><i class="fa fa-linkedin"></i> LinkedIn</a>
+  <a href="http://www.linkedin.com/shareArticle?mini=true&url=<%= normalise_ext("#{SITE_DOMAIN}/?ref=#{@rcode}") %>&title=<%= normalise_ext("#{COMPANY_NAME}") %>&summary=<%= normalise_ext("#{SOCIAL_SHARE_TEXT}") %>" title="Share on LinkedIn" target="_blank" class="btn btn-linkedin"><i class="fa fa-linkedin"></i> LinkedIn</a>
 </div><!-- ./social-referral-buttons -->
  
 <script>

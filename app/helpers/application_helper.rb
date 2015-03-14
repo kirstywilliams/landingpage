@@ -23,4 +23,14 @@ module ApplicationHelper
         flash_type.to_s
     end
   end
+
+  def multiple_messages(flash)
+  	arr = []
+	  flash.each do |type, messages|
+	    messages.each do |m|
+	      arr << render(:partial => 'shared/flash', :locals => {:type => type, :message => m}) unless m.blank?
+	    end
+	  end
+	  arr.join('<br/>')
+	end
 end

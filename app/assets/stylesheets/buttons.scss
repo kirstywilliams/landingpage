@@ -29,9 +29,9 @@
 .btn-signup{
 	background-color: $primary-color;
 	color: #FFF;
-}
 
-.btn-signup:hover{
-	background-color: $primary-color;
-	color: #FFF;
+	&:hover{
+		background-color: $primary-color;
+		color: #FFF;
+	}
 }

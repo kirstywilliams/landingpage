@@ -154,7 +154,7 @@
 //Full page backgrounds
 @mixin cover-background($image){
     background: #000;
-    background-image: image-url($image);
+    background-image: url($image);
     background-size: cover;
     background-position: center;
     width:100%;

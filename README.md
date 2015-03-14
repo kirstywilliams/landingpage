@@ -4,7 +4,7 @@ Landing page template with social sharing / referral tracking
 
 ## Todo:
 
-1. Clean up controller code and move into model
+1. Clean up handling of mailchimp errors in controller.
 2. Clean up UI - some responsive fixes
 
 ## Current State
