@@ -15,24 +15,25 @@ class Lead < ActiveRecord::Base
 	validates :name, 						presence: true
 	validates :referral_code,		presence: true, :if => :email_is_present?
 	validates :email, 					presence: true, 
-															uniqueness: { case_sensitive: false },
-															email: true
+	uniqueness: { case_sensitive: false },
+	email: true
 
 
+	# Todo: better error handling needed.
 	def self.mailchimp_signup(name, email, referral_code)
 
 		errors = []
 
 		# Setup mailchimp client
 		begin
-      mailchimp = Mailchimp::API.new(MAILCHIMP_API_KEY)
-    rescue => e
-      errors << {:code => "MC01" , :text => "Sorry, we cannot contact Mailchimp at this time.", :message => e.message, :data => nil }
-    end
+			mailchimp = Mailchimp::API.new(MAILCHIMP_API_KEY)
+		rescue => e
+			errors << {:code => "MC01" , :text => "Sorry, we cannot contact Mailchimp at this time.", :message => e.message, :data => nil }
+		end
 
     # Retrieve lead if exists
-		begin
-      lead_info = mailchimp.lists.member_info(MAILCHIMP_LIST_ID, ['email' => email])
+    begin
+    	lead_info = mailchimp.lists.member_info(MAILCHIMP_LIST_ID, ['email' => email])
     rescue => e
     	errors << {:code => "MC02", :text => "There was a problem getting info on this email address.", :message => e.message, :data => lead_info }
     end
@@ -42,7 +43,7 @@ class Lead < ActiveRecord::Base
     	lead_info['errors'].each do |error|
 
     		# 232: User is not in the list (new lead)
-	    	if error['code'] == 232
+    		if error['code'] == 232
 	    		unless referral_code.blank? #Increment referral_count for referring lead
 	    			begin
 	    				referrer = Lead.where(referral_code: referral_code).first
@@ -67,10 +68,10 @@ class Lead < ActiveRecord::Base
 	    			lead.update_attributes(name: name)
 
 	    			result = mailchimp.lists.subscribe(
-	    																	"#{MAILCHIMP_LIST_ID}",
-	                                      {'email' => email}, {'NAME' => name, 'RCODE' => lead.referral_code, 'RCOUNT' => '0'}, 
-	                                      "double_optin" => false, 
-	                                      "send_welcome" => true)
+	    				"#{MAILCHIMP_LIST_ID}",
+	    				{'email' => email}, {'NAME' => name, 'RCODE' => lead.referral_code, 'RCOUNT' => '0'}, 
+	    				"double_optin" => false, 
+	    				"send_welcome" => true)
 
 	    		rescue => e
 	    			errors << {:message => "There was a problem subscribing you to the list on Mailchimp.", :message => e.message, :data => result}
@@ -82,30 +83,30 @@ class Lead < ActiveRecord::Base
     	# their mailchimp referral data won't be up to date.
     	lead = Lead.where(:email => lead_info['data'][0]['email']).limit(1).pluck(:referral_count, :referral_code).first
     	rcount = lead[0]
-      rcode  = lead[1]
+    	rcode  = lead[1]
     end
 
     {:data => {:rcount => rcount, :rcode => rcode}, :errors => errors}
-	end
+  end
 
-	private
+  private
 
-	def downcase_email
+  def downcase_email
 
-		self.email = email.try(:downcase)
-		
-	end
+  	self.email = email.try(:downcase)
 
-	def set_referral_code
+  end
 
-		self.referral_code = Digest::MD5.hexdigest(email) if email_is_present?
-		
-	end
+  def set_referral_code
 
-	def email_is_present?
+  	self.referral_code = Digest::MD5.hexdigest(email) if email_is_present?
 
-		!email.blank?
-		
-	end
+  end
+
+  def email_is_present?
+
+  	!email.blank?
+
+  end
 
 end

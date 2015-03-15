@@ -16,13 +16,13 @@
 
   <a href="http://www.linkedin.com/shareArticle?mini=true&url=<%= normalise_ext("#{SITE_DOMAIN}/?ref=#{@rcode}") %>&title=<%= normalise_ext("#{COMPANY_NAME}") %>&summary=<%= normalise_ext("#{SOCIAL_SHARE_TEXT}") %>" title="Share on LinkedIn" target="_blank" class="btn btn-linkedin"><i class="fa fa-linkedin"></i> LinkedIn</a>
 </div><!-- ./social-referral-buttons -->
- 
+
 <script>
-  $(document).ready(function() {
-    var clip = new ZeroClipboard($("#copy-referral-link"));
-    $("#copy-referral-link").tooltip();
-	  clip.on("aftercopy", function(event){
-      $('.tooltip .tooltip-inner').text('Copied!');
-    });
+$(document).ready(function() {
+  var clip = new ZeroClipboard($("#copy-referral-link"));
+  $("#copy-referral-link").tooltip();
+  clip.on("aftercopy", function(event){
+    $('.tooltip .tooltip-inner').text('Copied!');
   });
+});
 </script>

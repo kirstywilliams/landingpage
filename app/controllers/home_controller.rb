@@ -6,6 +6,7 @@ class HomeController < ApplicationController
 
   def interested
 
+    # basic email check before any processing
     if (params['email'].blank? or params['email'] !~ /\A[^@\s]+@([^@.\s]+\.)+[^@.\s]+\z/)
       flash.now[:error] = []
       flash.now[:error] << 'Your email address was not recognised. Please try again.'
@@ -16,20 +17,20 @@ class HomeController < ApplicationController
     email = params['email']
     name  = params['name']
 
+    # process lead's mailchimp signup
     result = Lead.mailchimp_signup(name, email, ref)
 
-    if result[:errors].any?
+    if result[:errors].any? # there were problems with processing signup
       flash.now[:error] = []
       result[:errors].each do |error|
-        puts "error: #{error}"
         flash.now[:error] << error[:message]
       end
       return render 'subscribe_error.js.erb'
-    elsif !result[:data][:rcode].nil?
+    elsif !result[:data][:rcode].nil? # the lead has already signed up
       @rcount = result[:data][:rcount]
       @rcode  = result[:data][:rcode]
       return render 'stats.js.erb'
-    else
+    else # lead is new and was processed successfully
       @rcode = Lead.where(:email => email).limit(1).pluck(:referral_code).first
       @rcount = 0
       flash.now[:success] = "Please check the email we've sent you to confirm your subscription."
@@ -37,6 +38,7 @@ class HomeController < ApplicationController
     end
   end
   
+  # Method for contact form
   def dispatch_email
     lead_info = params[:lead_info]
     if ContactMailer.send_email(lead_info).deliver

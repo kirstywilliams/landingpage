@@ -1,16 +1,16 @@
 <div class="notice_flash">
-<% flash.each do |type, message| %>
-  <div class="alert <%= bootstrap_class_for(type) %> fade in">
-    <button class="close" data-dismiss="alert">×</button>
-    <%= message %>
-  </div>
-<% end %>
+	<% flash.each do |type, message| %>
+	<div class="alert <%= bootstrap_class_for(type) %> fade in">
+		<button class="close" data-dismiss="alert">×</button>
+		<%= message %>
+	</div>
+	<% end %>
 </div><!-- ./notice_flash -->
 
 <script type="text/javascript">
 $(document).ready(function(){
-  setTimeout(function(){
-    $('.notice_flash').remove();
-  }, 8000);
- })
+	setTimeout(function(){
+		$('.notice_flash').remove();
+	}, 8000);
+})
 </script>

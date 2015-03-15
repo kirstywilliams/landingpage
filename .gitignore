@@ -39,5 +39,3 @@ Gemfile.lock
 
 config/initializers/bitly.rb
 config/initializers/landingpage.rb
-
- images/*

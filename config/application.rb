@@ -7,13 +7,13 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module Landingpage
-  class Application < Rails::Application
-    config.active_record.raise_in_transactional_callbacks = true
+	class Application < Rails::Application
+		config.active_record.raise_in_transactional_callbacks = true
 
-    config.assets.configure do |env|
-      if Rails.env.development? || Rails.env.test?
-        env.cache = ActiveSupport::Cache.lookup_store(:memory_store)
-      end
-    end
-  end
+		config.assets.configure do |env|
+			if Rails.env.development? || Rails.env.test?
+				env.cache = ActiveSupport::Cache.lookup_store(:memory_store)
+			end
+		end
+	end
 end
